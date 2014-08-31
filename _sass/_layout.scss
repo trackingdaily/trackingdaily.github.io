@@ -241,7 +241,8 @@
 .page-content {
     padding: $spacing-unit 0;
     background: $background-color;
-    z-index: 2000; 
+    z-index: 2000;
+    text-align: left;
 }
 
 .post-list {
