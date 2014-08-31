@@ -1,0 +1,43 @@
+.bg {
+  position:fixed;
+  width:100%;
+  height:400px;
+  z-index:-100;
+  > div {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-color: #000; 
+    background-position:center center;
+  }
+}
+
+.bg-normal {
+  z-index:10;
+  background-image: url('../assets/images/bg-header-light.jpg');
+}
+
+.bg-blur {
+  z-index:20;
+  background-image: url('../assets/images/bg-header-blur.jpg');
+  opacity:0;
+  transition: opacity 0.4s;
+}
+
+.container {
+  z-index:2000;
+}
+
+.slogan-holder {
+  position:relative;
+  width:100%;
+  height:440px;
+}
+
+.disable-pointer-events {
+  pointer-events:none!important;
+}

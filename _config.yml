@@ -1,0 +1,15 @@
+# Site settings
+title: Tracking Daily - Fit blog
+email: ivana.trackingdaily@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Tracking daily is created to inspire and motivate people to stay fit and living a healthy lifestyle.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://trackingdaily.com" # the base hostname & protocol for your site
+twitter_username: ivanasetiawan
+github_username:  trackingdaily
+
+# Build settings
+markdown: kramdown
+
+sass:
+  style: :compressed

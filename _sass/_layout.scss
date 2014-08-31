@@ -1,0 +1,311 @@
+/**
+ * Site header
+ */
+.site-header {
+    border-top: 5px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
+    min-height: 56px;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
+    width:100%;
+    height:400px;
+}
+
+.header--single {
+    padding: 1px 0 20px;
+}
+
+.site-title {
+    display: block;
+    text-indent: -9999px;
+    width: 149px;
+    height: 56px;
+    margin: 20px auto 0;
+    background-image: url('../assets/images/logo.png');
+    background-size: cover;
+}
+
+.site-subtitle {
+    text-align: center;
+    display: block;
+    font-style: italic;
+    color: $background-color;
+    opacity: 0.6;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+    
+.site-nav {
+    float: right;
+    line-height: 56px;
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $background-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+        }
+    }
+}
+
+/**
+ * Breadcrumbs
+ */
+.breadcrumbs {
+    overflow: hidden;
+    margin: 0 0 30px;
+    
+    li { float: left; }
+
+    a {
+        &:before {
+            display: inline-block;
+            content: "";
+            width: 0; 
+            height: 0; 
+            margin-right: 10px;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            border-right: 8px solid $red-color; 
+        }
+        &:hover {
+            &:before { border-right-color: $grey-color; }
+        }
+    }
+}
+
+.headerlink--scroll {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    text-indent: -9999px;
+    display: block;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    &:after {
+        content: "";
+        display: block;
+        width: 0; 
+        height: 0; 
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;   
+        border-top: 10px solid $red-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -3px 0 0 -10px;
+    }
+    &:hover {
+        transition: background 0.3s;
+        background: rgba(189, 42, 61, 0.7);
+        &:after {
+            border-top-color: #fff;
+        }
+    }
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: $spacing-unit 0;
+    background: $red-color;
+    z-index: 2000;
+    color: #fff;
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color-light;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+    a { color: $grey-color-light; 
+        &:hover { text-decoration: underline; }
+    }
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+    width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+    background: $background-color;
+    z-index: 2000; 
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        padding-top: 20px;
+        border-bottom: dashed 1px rgba(0, 0, 0, 0.15);    
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+// .post-link {
+//     display: block;
+//     font-size: 24px;
+// }
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
